@@ -13,13 +13,8 @@ dev_dependencies:
   angular_test: ^2.0.0-alpha
   build_runner: ^0.8.8
   build_test: ^0.10.2
+  built_value_generator: ^5.4.0
   build_web_compilers: ^0.4.0
-  test: ^0.12.30
-
-dependency_overrides:
-  # Temporarily use mock pageloader (https://github.com/dart-lang/site-webdev/issues/1351):
+  test: ^0.12.35
   pageloader:
-     git:
-       url: https://github.com/dart-lang/site-webdev.git
-       path: examples/util/pageloader
-#    path: ../../../util/pageloader
+     git: https://github.com/google/pageloader.git

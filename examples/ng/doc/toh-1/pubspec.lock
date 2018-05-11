@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.31.1"
+  analyzer_plugin:
+    dependency: transitive
+    description:
+      name: analyzer_plugin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1-alpha.0"
   angular:
     dependency: "direct main"
     description:
@@ -140,7 +147,14 @@ packages:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.3"
+    version: "5.4.4"
+  built_value_generator:
+    dependency: "direct dev"
+    description:
+      name: built_value_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.4.4"
   charcode:
     dependency: transitive
     description:
@@ -189,7 +203,7 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.2"
+    version: "0.14.4"
   dart_style:
     dependency: transitive
     description:
@@ -287,7 +301,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.3"
+    version: "0.2.4"
   kernel:
     dependency: transitive
     description:
@@ -352,14 +366,14 @@ packages:
     source: hosted
     version: "1.0.2"
   pageloader:
-    dependency: "direct overridden"
+    dependency: "direct dev"
     description:
-      path: "examples/util/pageloader"
+      path: "."
       ref: HEAD
-      resolved-ref: a80a77106355900ecf3a3fdbc39b4b6b82a51dc7
-      url: "https://github.com/dart-lang/site-webdev.git"
+      resolved-ref: "541f00021c104524e79af29b5ec2471ab33ba9c8"
+      url: "https://github.com/google/pageloader.git"
     source: git
-    version: "0.0.1"
+    version: "3.0.0-dev"
   path:
     dependency: transitive
     description:
@@ -500,6 +514,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  sync_http:
+    dependency: transitive
+    description:
+      name: sync_http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   term_glyph:
     dependency: transitive
     description:
@@ -528,6 +549,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.5"
+  unittest:
+    dependency: transitive
+    description:
+      name: unittest
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.11.7"
   utf:
     dependency: transitive
     description:
@@ -549,6 +577,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.7"
+  webdriver:
+    dependency: transitive
+    description:
+      name: webdriver
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0-beta"
   yaml:
     dependency: transitive
     description:

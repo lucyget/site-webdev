@@ -5,46 +5,53 @@ import 'dart:async';
 import 'package:angular_test/angular_test.dart';
 import 'package:angular_tour_of_heroes/app_component.dart';
 import 'package:angular_tour_of_heroes/app_component.template.dart' as ng;
-import 'package:pageloader/objects.dart';
+import 'package:pageloader/html.dart';
 import 'package:test/test.dart';
 
 import 'app_test.template.dart' as ng;
 
+part 'app_test.g.dart';
+
 // #docregion AppPO, AppPO-initial, AppPO-hero, AppPO-input
-class AppPO extends PageObjectBase {
+@PageObject()
+abstract class AppPO {
+
+  AppPO();
+  factory AppPO.create(PageLoaderElement context) = $AppPO.create;
+
   // #enddocregion AppPO-hero, AppPO-input
   @ByTagName('h1')
-  PageLoaderElement get _title => q('h1');
+  PageLoaderElement _title;
   // #enddocregion AppPO-initial
 
   // #docregion AppPO-hero
-  @FirstByCss('div')
-  PageLoaderElement get _id => q('div'); // e.g. 'id: 1'
+  @First(ByCss('div'))
+  PageLoaderElement _id; // e.g. 'id: 1'
 
   @ByTagName('h2')
-  PageLoaderElement get _heroName => q('h2');
+  PageLoaderElement _heroName;
   // #enddocregion AppPO-hero
 
   // #docregion AppPO-input
   @ByTagName('input')
-  PageLoaderElement get _input => q('input');
+  PageLoaderElement _input;
   // #enddocregion AppPO-input
 
   // #docregion AppPO-initial
-  Future<String> get title => _title.visibleText;
+  String get title => _title.visibleText;
   // #enddocregion AppPO-initial
 
   // #docregion AppPO-hero
-  Future<int> get heroId async {
-    final idAsString = (await _id.visibleText).split(':')[1];
+  int get heroId {
+    final idAsString = _id.visibleText.split(':')[1];
     return int.tryParse(idAsString) ?? -1;
   }
 
-  Future<String> get heroName => _heroName.visibleText;
+  String get heroName => _heroName.visibleText;
   // #enddocregion AppPO-hero
 
   // #docregion AppPO-input
-  Future type(String s) => _input.type(s);
+  Future<void> type(String s) => _input.type(s);
   // #docregion AppPO-initial, AppPO-hero
 }
 // #enddocregion AppPO, AppPO-initial, AppPO-hero, AppPO-input
@@ -58,7 +65,8 @@ void main() {
 
   setUp(() async {
     fixture = await testBed.create();
-    appPO = await new AppPO().resolve(fixture);
+    final context = new HtmlPageLoaderElement.createFromElement(fixture.rootElement);
+    appPO = new AppPO.create(context);
   });
   // #enddocregion appPO-setup
 
